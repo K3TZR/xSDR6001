@@ -1,6 +1,6 @@
 //
-//  Waterfall.swift
-//  TestxSDRLayout
+//  WaterfallView.swift
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/19/21.
 //

@@ -9,35 +9,21 @@ import SwiftUI
 import xClient6001
 import xLib6001
 
-final public class XSDR6001: ObservableObject, RadioManagerDelegate {
+final public class XSDR6001: ObservableObject {
 
+    @AppStorage("clientId") public var clientId: String?
+    @AppStorage("defaultGuiConnection") public var defaultGuiConnection: String?
+    @AppStorage("defaultNonGuiConnection") public var defaultNonGuiConnection: String?
+    @AppStorage("guiIsEnabled") public var guiIsEnabled: Bool = true
+    @AppStorage("smartlinkCallsign") public var smartlinkCallsign: String?
+    @AppStorage("smartlinkEmail") public var smartlinkEmail: String?
+    @AppStorage("smartlinkIsEnabled") public var smartlinkIsEnabled: Bool = false
+    @AppStorage("smartlinkName") public var smartlinkName: String?
+    @AppStorage("stationName") public var stationName: String?
 
+}
 
-    public struct LegendValue: Identifiable {
-        public var id: CGFloat         // relative position 0...1
-        public var value: CGFloat      // actual value
-    }
-
-
-
-
-    public var clientId: String?
-
-    public var defaultGuiConnection: String?
-
-    public var defaultNonGuiConnection: String?
-
-    public var guiIsEnabled: Bool = true
-
-    public var smartlinkCallsign: String?
-
-    public var smartlinkEmail: String?
-
-    public var smartlinkIsEnabled: Bool = true
-
-    public var smartlinkName: String?
-
-    public var stationName: String?
+extension XSDR6001: RadioManagerDelegate {
 
     public func didConnect() {
         print("----->>>>> didConnect")
@@ -53,42 +39,6 @@ final public class XSDR6001: ObservableObject, RadioManagerDelegate {
 
     public func willDisconnect() {
         print("----->>>>> willDisconnect")
-    }
-
-
-    // ----------------------------------------------------------------------------
-    // MARK: - Internal Methods
-
-    func dbmValues(pan: Panadapter, step: Int) -> [LegendValue] {
-        var values = [LegendValue]()
-
-        var value = pan.maxDbm
-
-        values.append( LegendValue(id: 0, value: value) )
-        repeat {
-            let next = value - CGFloat(step)
-            value = next < pan.minDbm ? pan.minDbm : next
-            let position = (pan.maxDbm - value) / (pan.maxDbm - pan.minDbm)
-            values.append( LegendValue(id: position, value: value) )
-        } while value != pan.minDbm
-        return values
-    }
-
-    func freqValues(pan: Panadapter, step: Int) -> [LegendValue] {
-        var values = [LegendValue]()
-
-        let maxFreq = CGFloat(pan.center + (pan.bandwidth/2))
-        let minFreq = CGFloat(pan.center - (pan.bandwidth/2))
-        var value = minFreq
-
-        values.append( LegendValue(id: 0, value: value) )
-        repeat {
-            let next = value + CGFloat(step)
-            value = next > maxFreq ? maxFreq : next
-            let position = (value - minFreq) / (maxFreq - minFreq)
-            values.append( LegendValue(id: position, value: value) )
-        } while value != maxFreq
-        return values
     }
 
 

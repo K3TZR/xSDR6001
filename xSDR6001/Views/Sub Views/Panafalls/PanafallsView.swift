@@ -1,6 +1,6 @@
 //
-//  Panafall.swift
-//  TestxSDRLayout
+//  PanafallsView.swift
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/19/21.
 //

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		910B2DC7265BF65B00D4565F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 910B2DC6265BF65B00D4565F /* README.md */; };
+		910B2DC9265C080E00D4565F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B2DC8265C080E00D4565F /* ViewModel.swift */; };
 		9155C52C2655EA1500396E43 /* xSDR6001App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155C52B2655EA1500396E43 /* xSDR6001App.swift */; };
 		9155C52E2655EA1500396E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155C52D2655EA1500396E43 /* ContentView.swift */; };
 		9155C5302655EA1600396E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9155C52F2655EA1600396E43 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		910B2DC6265BF65B00D4565F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		910B2DC8265C080E00D4565F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9155C5282655EA1500396E43 /* xSDR6001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xSDR6001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9155C52B2655EA1500396E43 /* xSDR6001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xSDR6001App.swift; sourceTree = "<group>"; };
 		9155C52D2655EA1500396E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		9155C51F2655EA1500396E43 = {
 			isa = PBXGroup;
 			children = (
+				910B2DC8265C080E00D4565F /* ViewModel.swift */,
 				910B2DC6265BF65B00D4565F /* README.md */,
 				9155C52A2655EA1500396E43 /* xSDR6001 */,
 				9155C5292655EA1500396E43 /* Products */,
@@ -299,6 +302,7 @@
 				91845325265AC17100556261 /* SideRxView.swift in Sources */,
 				91845329265AC24400556261 /* SidePcwView.swift in Sources */,
 				9155C5522655ED1F00396E43 /* PanafallsView.swift in Sources */,
+				910B2DC9265C080E00D4565F /* ViewModel.swift in Sources */,
 				9184532B265AC27C00556261 /* SidePhneView.swift in Sources */,
 				91845322265AB06100556261 /* SideView.swift in Sources */,
 				9155C5592656AE6900396E43 /* PanadapterGraphicView.swift in Sources */,
@@ -457,7 +461,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.xSDR6001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -482,7 +486,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.k3tzr.xSDR6001;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

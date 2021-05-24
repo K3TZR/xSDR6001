@@ -1,6 +1,6 @@
 //
-//  Side.swift
-//  xMini6001
+//  SideView.swift
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/13/21.
 //

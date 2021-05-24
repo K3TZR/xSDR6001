@@ -1,6 +1,6 @@
 //
 //  PanadapterView.swift
-//  TestxSDRLayout
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/19/21.
 //
@@ -14,41 +14,30 @@ struct PanadapterView: View {
     @ObservedObject var panadapter: Panadapter
 
     @State var freqStep = 25_000
-
-
-    func freqValues(pan: Panadapter, step: Int) -> [XSDR6001.LegendValue] {
-        var values = [XSDR6001.LegendValue]()
-
-        let maxFreq = CGFloat(panadapter.center + (panadapter.bandwidth/2))
-        let minFreq = CGFloat(panadapter.center - (panadapter.bandwidth/2))
-
-        var value = minFreq
-
-        values.append( XSDR6001.LegendValue(id: 0, value: value) )
-        repeat {
-            let next = value + CGFloat(step)
-            value = next > maxFreq ? maxFreq : next
-            let position = (value - minFreq) / (maxFreq - minFreq)
-            values.append( XSDR6001.LegendValue(id: position, value: value) )
-        } while value != maxFreq
-        return values
-    }
+    @State var dbmStep = 10
 
     var body: some View {
-            VStack(spacing: 0) {
-                HStack(spacing: 0) {
-                    ZStack {
-                        FrequencyLinesView(values: freqValues(pan: panadapter, step: freqStep))
-                        DbmLinesView()
-//                        PanadapterGraphicView()
-                    }
-//                    DbLegendView()
+
+        let dbmValues = ViewModel.dbmValues(pan: panadapter, step: dbmStep)
+        let freqValues = ViewModel.freqValues(pan: panadapter, step: freqStep)
+
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                ZStack {
+                    FrequencyLinesView(values: freqValues)
+                    DbmLinesView(values: dbmValues)
+                    //                        PanadapterGraphicView()
                 }
-                let lineCount = (CGFloat(panadapter.center + (panadapter.bandwidth/2)) - CGFloat(panadapter.center - (panadapter.bandwidth/2))) / CGFloat(freqStep)
-                FrequencyLegendView(values: freqValues(pan: panadapter, step: freqStep), lineCount: lineCount)
+                DbLegendView(values: dbmValues, lineCount: (panadapter.maxDbm - panadapter.minDbm) / CGFloat(dbmStep))
             }
-            .frame(minWidth: 400, maxWidth: .infinity, minHeight: 100 + 20, maxHeight: .infinity)
+            FrequencyLegendView(values: freqValues, lineCount: (CGFloat(panadapter.center + (panadapter.bandwidth/2)) - CGFloat(panadapter.center - (panadapter.bandwidth/2))) / CGFloat(freqStep))
+        }
+        .frame(minWidth: 400, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity)
+        .border(Color(.labelColor))
     }
+
+    // ----------------------------------------------------------------------------
+
 }
 
 struct PanadapterView_Previews: PreviewProvider {

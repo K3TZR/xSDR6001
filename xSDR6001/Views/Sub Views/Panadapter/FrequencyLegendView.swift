@@ -1,6 +1,6 @@
 //
-//  FrequencyLegend.swift
-//  TestxSDRLayout
+//  FrequencyLegendView.swift
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/19/21.
 //
@@ -9,10 +9,11 @@ import SwiftUI
 import xLib6001
 
 struct FrequencyLegendView: View {
-    let values: [XSDR6001.LegendValue]
+    let values: [ViewModel.LegendValue]
     let lineCount: CGFloat
 
-    @State var freqLegendColor: Color = .green
+    @State var legendColor: Color = .green
+    @State var freqLegendHeight: CGFloat = 20
 
     var body: some View {
 
@@ -29,14 +30,14 @@ struct FrequencyLegendView: View {
                     }
                 }
             }
-            .frame(minWidth: 400, maxWidth: .infinity, minHeight: 20, maxHeight: 20)
-            .foregroundColor(freqLegendColor)
+            .frame(minWidth: 400, maxWidth: .infinity, minHeight: freqLegendHeight, maxHeight: freqLegendHeight)
+            .foregroundColor(legendColor)
         }
     }
 }
 
 struct FrequencyLegendView_Previews: PreviewProvider {
     static var previews: some View {
-        FrequencyLegendView(values: [XSDR6001.LegendValue](), lineCount: 0)
+        FrequencyLegendView(values: [ViewModel.LegendValue](), lineCount: 0)
     }
 }

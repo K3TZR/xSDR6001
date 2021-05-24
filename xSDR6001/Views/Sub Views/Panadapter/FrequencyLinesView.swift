@@ -1,6 +1,6 @@
 //
-//  FrequencyLines.swift
-//  TestxSDRLayout
+//  FrequencyLinesView.swift
+//  xSDR6001
 //
 //  Created by Douglas Adams on 5/19/21.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FrequencyLinesView: View {
-    let values: [XSDR6001.LegendValue]
+    let values: [ViewModel.LegendValue]
 
     @State var gridColor: Color = .white
 
@@ -34,6 +34,6 @@ struct FrequencyLinesView: View {
 
 struct FrequencyLinesView_Previews: PreviewProvider {
     static var previews: some View {
-        FrequencyLinesView(values: [XSDR6001.LegendValue]())
+        FrequencyLinesView(values: [ViewModel.LegendValue]())
     }
 }
