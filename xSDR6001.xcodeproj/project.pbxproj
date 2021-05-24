@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910B2DC7265BF65B00D4565F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 910B2DC6265BF65B00D4565F /* README.md */; };
 		9155C52C2655EA1500396E43 /* xSDR6001App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155C52B2655EA1500396E43 /* xSDR6001App.swift */; };
 		9155C52E2655EA1500396E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9155C52D2655EA1500396E43 /* ContentView.swift */; };
 		9155C5302655EA1600396E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9155C52F2655EA1600396E43 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		910B2DC6265BF65B00D4565F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9155C5282655EA1500396E43 /* xSDR6001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xSDR6001.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9155C52B2655EA1500396E43 /* xSDR6001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xSDR6001App.swift; sourceTree = "<group>"; };
 		9155C52D2655EA1500396E43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		9155C51F2655EA1500396E43 = {
 			isa = PBXGroup;
 			children = (
+				910B2DC6265BF65B00D4565F /* README.md */,
 				9155C52A2655EA1500396E43 /* xSDR6001 */,
 				9155C5292655EA1500396E43 /* Products */,
 			);
@@ -277,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910B2DC7265BF65B00D4565F /* README.md in Resources */,
 				9155C5332655EA1600396E43 /* Preview Assets.xcassets in Resources */,
 				9155C5302655EA1600396E43 /* Assets.xcassets in Resources */,
 			);
